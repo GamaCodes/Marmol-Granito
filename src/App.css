@@ -1,52 +1,86 @@
-.App {
+.footer-contain {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: aquamarine;
+  width: 100vw;
+}
+
+.navbar-contain{
+  text-align: center;
+  padding: 1rem 0;
+  background-color: black;
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+}
+
+.navbar-contain svg{
+  width: 30vw;
+  height: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  margin-bottom: 3rem;
+.hero-svg svg {
+  width: 80vw;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero-body {
+  height: 100vh;
+  position: relative;
 }
 
-.App-header {
-  background-color: #FF9500;
-  min-height: 100vh;
+.hero-body::before {
+  opacity: .5;
+  background-image: url("https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-color: #cccccc;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card-body {
+  height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-  font-size: 1rem;
-  letter-spacing: .8rem;
-  font-weight: bold;
+.about-contain{
+  display: flex;
+  align-items: center;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about-box {
+  width: 80vw;
+  margin-bottom: 2rem;
+}
+
+.about-media{
+  height: 25vh;
 }
 
 @media (min-width: 600px) {
-  .App-link {
-    font-size: 2rem;
+  .navbar-contain svg{
+    width: 10vw;
   }
-}
-
-.app-image{
-  width: 40vw;
+  .hero-svg svg {
+    width: 40vw;
+  }
+  .about-box {
+    width: 50vw;
+  }
+  .about-media{
+    height: 35vh;
+  }
 }
