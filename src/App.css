@@ -9,7 +9,7 @@
 .navbar-contain{
   text-align: center;
   padding: 1rem 0;
-  background-color: black;
+  background-color: white;
   position: fixed;
   width: 100vw;
   z-index: 2;
@@ -29,6 +29,10 @@
 .hero-body {
   height: 100vh;
   position: relative;
+}
+
+.serviceSvg{
+  text-align: center;
 }
 
 .hero-body::before {
@@ -51,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #ddbd89 ;
 }
 
 .about-contain{
@@ -59,6 +64,7 @@
   padding-top: 15vh;
   padding-bottom: 15vh;
   flex-direction: column;
+  background-color: #ddbd89 ;
 }
 
 .about-box {

@@ -15,46 +15,53 @@ import Experience from "./pages/experience";
 import NotFound from "./pages/notFound";
 
 import "./App.css";
+import { ThemeProvider } from "@material-ui/core/styles";
+
+import theme from "./Theme";
 
 class Router extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="page-container">
-          <div className="app">
-            <Navbar />
-            <Route
-              render={({ location }) => {
-                const { pathname, key } = location;
+        <ThemeProvider theme={theme}>
+          <div className="page-container">
+            <div className="app">
+              <Navbar />
+              <Route
+                render={({ location }) => {
+                  const { pathname, key } = location;
 
-                return (
-                  <TransitionGroup component={null}>
-                    <Transition
-                      key={key}
-                      appear={true}
-                      onEnter={(node, appears) => play(pathname, node, appears)}
-                      onExit={(node, appears) => exit(node, appears)}
-                      timeout={{ enter: 750, exit: 150 }}
-                    >
-                      <Switch location={location}>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/acerca" component={About} />
-                        <Route exact path="/servicios" component={Service} />
-                        <Route
-                          exact
-                          path="/experiencia"
-                          component={Experience}
-                        />
-                        <Route component={NotFound} />
-                      </Switch>
-                    </Transition>
-                  </TransitionGroup>
-                );
-              }}
-            />
+                  return (
+                    <TransitionGroup component={null}>
+                      <Transition
+                        key={key}
+                        appear={true}
+                        onEnter={(node, appears) =>
+                          play(pathname, node, appears)
+                        }
+                        onExit={(node, appears) => exit(node, appears)}
+                        timeout={{ enter: 750, exit: 150 }}
+                      >
+                        <Switch location={location}>
+                          <Route exact path="/" component={Home} />
+                          <Route exact path="/acerca" component={About} />
+                          <Route exact path="/servicios" component={Service} />
+                          <Route
+                            exact
+                            path="/experiencia"
+                            component={Experience}
+                          />
+                          <Route component={NotFound} />
+                        </Switch>
+                      </Transition>
+                    </TransitionGroup>
+                  );
+                }}
+              />
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </ThemeProvider>
       </BrowserRouter>
     );
   }

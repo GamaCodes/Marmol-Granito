@@ -258,6 +258,63 @@ export default function Index() {
           </CardContent>
         </CardActionArea>
       </Card>
+      <Card className="about-box">
+        <CardActionArea>
+          <CardContent className={classes.contain}>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              align="justify"
+              className={classes.text}
+            >
+              <span className={classes.capital}>N</span>os hemos caracterizado
+              por la realización de obras emblemáticas de la nueva arquitectura
+              mexicana, lo mismo en desarrollos residenciales, unifamiliares y
+              rústicos, que en espacios corporativos y comerciales a gran
+              escala.
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              align="justify"
+              className={classes.text}
+            >
+              <span className={classes.capital}>S</span>omos responsable de
+              varias edificaciones de gran importancia en el país. Como
+              constructora de viviendas, financiamiento de toda clase de obras
+              públicas y privadas, así como la promoción, administración y
+              participación en negocios inmobiliarios, comerciales e
+              industriales.
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              align="justify"
+              className={classes.text}
+            >
+              <span className={classes.capital}>C</span>on el desarrollo
+              progresivo del ramo de la construcción, las constructoras
+              inmobiliarias en México tienen, pues, un papel importante y es muy
+              conveniente a cualquier interesado en la economía del país o el
+              sector inmobiliario saber cuáles son las de mayor relevancia.
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              align="justify"
+              className={classes.text}
+            >
+              <span className={classes.capital}>T</span>ambién construcción de
+              todo tipo de obra pública federal, estatal o municipal, como
+              carreteras, caminos, puentes, drenajes, escuelas, clínicas,
+              hospitales, mantenimiento de inmuebles públicos; así como la
+              subcontratación, por cuenta propia o de terceros, de toda clase de
+              construcciones, edificaciones y urbanizaciones en zonas urbanas,
+              semiurbanas y rurales.
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </div>
   );
 }
