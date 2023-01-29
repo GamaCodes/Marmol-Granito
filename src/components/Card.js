@@ -1,57 +1,125 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
+import React, { useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 150,
-  },
-  text: {
-    padding: "1rem",
-  },
-  contain: {
-    padding: "2rem",
-  },
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function MediaCard() {
-  const classes = useStyles();
+export default function Contact() {
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState("");
+  const [data1, setData1] = useState("");
+  const [data2, setData2] = useState("");
+  const [data3, setData3] = useState("");
+
+  const handleClick = (e) => {
+    setOpen(true);
+    setData("");
+    setData1("");
+    setData2("");
+    setData3("");
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const handleChange = ({ target }) => {
+    const { value } = target;
+    setData(value);
+  };
+
+  const handleChange1 = ({ target }) => {
+    const { value } = target;
+    setData1(value);
+  };
+
+  const handleChange2 = ({ target }) => {
+    const { value } = target;
+    setData2(value);
+  };
+
+  const handleChange3 = ({ target }) => {
+    const { value } = target;
+    setData3(value);
+  };
 
   return (
-    <div className="card-body" id="contacto">
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            title="Servicio al cliente"
-          />
-          <CardContent className={classes.contain}>
-            <Typography gutterBottom variant="h5" component="h2" align="center">
-              Contáctanos
-            </Typography>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              align="justify"
-              className={classes.text}
-            >
-              Buscando un continuo crecimiento, leemos tus comentarios y
-              sugerencias
-            </Typography>
-            <Typography variant="body2" color="textPrimary" align="center">
-              obras@constructoramarmolygranito.com
-            </Typography>
+    <>
+      <div className="cont-mapa" id="contacto">
+        <Card sx={{ width: "90vw" }}>
+          <CardContent className="card-mapa">
+            <div className="div-mapa">
+              <p>Por favor, déjanos tus datos en el formulario.</p>
+              <form className="input-mapa">
+                <TextField
+                  id="outlined-basic"
+                  name="Nombre"
+                  label="Nombre"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={data}
+                />
+                <TextField
+                  id="outlined-basic"
+                  name="Correo"
+                  label="Correo"
+                  variant="outlined"
+                  onChange={handleChange1}
+                  value={data1}
+                />
+                <TextField
+                  id="outlined-basic"
+                  name="Teléfono"
+                  label="Teléfono"
+                  variant="outlined"
+                  onChange={handleChange2}
+                  value={data2}
+                />
+                <TextField
+                  id="outlined-multiline-flexible"
+                  multiline
+                  rows={3}
+                  name="Mensaje"
+                  label="Mensaje"
+                  variant="outlined"
+                  onChange={handleChange3}
+                  value={data3}
+                />
+
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleClick}
+                >
+                  <a className="bttn-cooon" href="#contacto">
+                    Enviar
+                  </a>
+                </Button>
+              </form>
+            </div>
           </CardContent>
-        </CardActionArea>
-      </Card>
-    </div>
+        </Card>
+      </div>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      >
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          Hemos recibido tu mensaje y te contactaremos lo antes posible.
+        </Alert>
+      </Snackbar>
+    </>
   );
 }

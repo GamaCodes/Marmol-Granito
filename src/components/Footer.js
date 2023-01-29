@@ -1,46 +1,45 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import LiveHelpIcon from "@material-ui/icons/LiveHelp";
-import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
-import HomeIcon from "@material-ui/icons/Home";
+import Button from "@material-ui/core/Button";
+import { NavLink } from "react-router-dom";
 
-export default function LabelBottomNavigation() {
-  let history = useHistory();
-  const [value, setValue] = React.useState("recents");
-
-  const go = (path) => history.push(path);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
+export default function Footer() {
   return (
-    <div className="footer-contain">
-      <BottomNavigation value={value} onChange={handleChange}>
-        <BottomNavigationAction
-          label="Acerca de"
-          value="favorites"
-          icon={<LiveHelpIcon />}
-          onClick={() => go("/acerca")}
-        />
-        <BottomNavigationAction
-          label="Inicio"
-          value="recents"
-          icon={<HomeIcon />}
-          onClick={() => {
-            go("/");
-            window.scrollTo(0, 0);
-          }}
-        />
-        <BottomNavigationAction
-          label="Servicios"
-          value="nearby"
-          icon={<BusinessCenterIcon />}
-          onClick={() => go("/servicios")}
-        />
-      </BottomNavigation>
+    <div className="container-footer">
+      <div className="section-footer">
+        <section className="section-footer-img">
+          <img src="./marmol_white.png" alt="logo blanco" />
+        </section>
+        <div className="section-footer-content">
+          <h2>Marmol y Granito</h2>
+          <p className="foot-just">
+            Somos constructores Mexicanos, la elección inteligente de las
+            constructoras
+          </p>
+        </div>
+        <div className="divv-footer-content">
+          <h2>Enlaces</h2>
+          <section className="ul-contin nolinkd">
+            <NavLink to="/" onClick={window.scrollTo(0, 0)}>
+              Inicio
+            </NavLink>
+            <NavLink to="acerca" onClick={window.scrollTo(0, 0)}>
+              Nosotros
+            </NavLink>
+            <NavLink to="servicios" onClick={window.scrollTo(0, 0)}>
+              Servicios
+            </NavLink>
+          </section>
+        </div>
+        <div className="divv-footer-content">
+          <h2>Contacto</h2>
+          <p className="pcorreo">obras@constructoramarmolygranito.com</p>
+          <p className="pcorreo">
+            Calle 1B 342 Local 4B, Vista Alegre Norte, CP 97138, Merida
+          </p>
+          <p className="pcorreo">(+52) 55 6586 - 6296</p>
+        </div>
+      </div>
+      <section className="center-foo">2019 – Derechos Reservados</section>
     </div>
   );
 }

@@ -4,7 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -18,10 +17,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   heroText: {
-    background: "#fff",
     marginTop: theme.spacing(4),
     padding: "1rem",
-    color: "#5D5E5E",
+    color: "#000",
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -234,9 +232,9 @@ export default function Hero() {
             <Grid container spacing={2} justifyContent="center">
               <Grid item>
                 <Button variant="contained" color="primary">
-                  <Link href="#contacto" color="inherit">
+                  <a className="bttn-cooon" href="#contacto">
                     Contáctanos
-                  </Link>
+                  </a>
                 </Button>
               </Grid>
             </Grid>

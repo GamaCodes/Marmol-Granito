@@ -16,9 +16,6 @@ const useStyles = makeStyles({
   text: {
     padding: "1rem",
   },
-  contain: {
-    padding: "2rem",
-  },
   capital: {
     color: "#8AAADD",
     fontSize: "2rem",
@@ -37,13 +34,15 @@ export default function Index() {
 
   return (
     <div className="about-contain">
-      <Card className="about-box">
-        <CardActionArea>
-          <CardMedia
-            className="about-media"
-            image="https://images.pexels.com/photos/697243/pexels-photo-697243.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            title="Quienes somos"
+      <section className="about-whor">
+        <div>
+          <img
+            src="https://images.pexels.com/photos/697243/pexels-photo-697243.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt="Quienes somos"
+            className="about-whor-img"
           />
+        </div>
+        <div>
           <CardContent className={classes.contain}>
             <Typography gutterBottom variant="h5" component="h2" align="center">
               ¿Quiénes somos?
@@ -75,8 +74,9 @@ export default function Index() {
               para nuestros accionistas.
             </Typography>
           </CardContent>
-        </CardActionArea>
-      </Card>
+        </div>
+      </section>
+
       <Card className="about-box">
         <CardActionArea>
           <CardMedia

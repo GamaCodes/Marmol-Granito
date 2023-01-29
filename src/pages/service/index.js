@@ -10,9 +10,6 @@ const useStyles = makeStyles({
   text: {
     padding: "1rem",
   },
-  contain: {
-    padding: "2rem",
-  },
   capital: {
     color: "#8AAADD",
     fontSize: "2rem",
@@ -525,6 +522,54 @@ export default function Index() {
           </CardContent>
         </CardActionArea>
       </Card>
+
+      <section className="about-whor">
+        <div>
+          <CardContent className={classes.contain}>
+            <Typography gutterBottom variant="h5" component="h2" align="center">
+              Otros Servicios
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              align="justify"
+              className={classes.text}
+            >
+              <span className={classes.capital}>A</span>
+              condicionamiento y mejoramiento de suelos tanto para edificaciones
+              como para urbanización, mercadotecnia, supervisión de obra,
+              investigación de campo, residencia de obra, museografía, diseño
+              editorial, gráfico e industrial, investigación histórica,
+              artística, botánica y paisajista de jardines, estudios
+              socioeconómicos, arquitectura, legal, contable, ingeniería,
+              investigación y consultoría de administración de obras y
+              desarrollo urbano.
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              align="justify"
+              className={classes.text}
+            >
+              <span className={classes.capital}>T</span>enemos una amplia
+              experiencia en la conducción y gestión de grandes obras, con el
+              conocimiento experto en las diferentes especialidades y áreas de
+              desarrollo, desde la identificación de oportunidades y la
+              ingeniería de soluciones, hasta la construcción de obra civil y la
+              operación de servicios públicos concesionados. Contribuimos al
+              desarrollo de nuestros empleados, al respecto del medioambiente y
+              la seguridad y salud en el trabajo.
+            </Typography>
+          </CardContent>
+        </div>
+        <div>
+          <img
+            src="https://images.pexels.com/photos/159358/construction-site-build-construction-work-159358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Quienes somos"
+            className="about-whor-img"
+          />
+        </div>
+      </section>
     </div>
   );
 }
