@@ -177,18 +177,18 @@ export default function Navbar() {
           <section className="menu-options">
             <p>
               <NavLink
-                to="acerca"
-                className={({ isActive }) => (isActive ? "option-select" : "")}
-              >
-                Nosotros
-              </NavLink>
-            </p>
-            <p>
-              <NavLink
                 to="/"
                 className={({ isActive }) => (isActive ? "option-select" : "")}
               >
                 Inicio
+              </NavLink>
+            </p>
+            <p>
+              <NavLink
+                to="acerca"
+                className={({ isActive }) => (isActive ? "option-select" : "")}
+              >
+                Nosotros
               </NavLink>
             </p>
             <p>
